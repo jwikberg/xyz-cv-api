@@ -541,6 +541,9 @@ function addAttributes() {
         },
         {
             name: 'canEditDomain'
+        },
+        {
+            name: 'canViewAdmin'
         }
     ];
 
@@ -572,10 +575,13 @@ function addRoles() {
 function addSkillGroups() {
     var skillGroups = [
         {
-            name: 'technologies'
+            name: 'Project methods & standards'
         },
         {
-            name: 'spokenLanguages'
+            name: 'Roles'
+        },
+        {
+            name: 'Technologies'
         }
     ];
     return Promise.all(applyAddOnItemsRec(skillGroups, 0, skillGroupController.createNewSkillGroup));
