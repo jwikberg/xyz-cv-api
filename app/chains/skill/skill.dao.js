@@ -50,6 +50,19 @@ exports.getSkills = function(query) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
+exports.updateSkill = function(skill) {
+    var options = {
+        resolveWithFullResponse: true,
+        uri: url + '/' + skill._id,
+        method: 'PUT',
+        json: skill
+    };
+
+    return request(options)
+        .then(responseHandler.parsePut)
+        .catch(errorHandler.throwDREAMSHttpError);
+};
+
 exports.deleteSkillById = function(id) {
     var options = {
         resolveWithFullResponse: true,

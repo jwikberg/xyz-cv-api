@@ -25,6 +25,16 @@ function getSkillTemplate() {
     };
 }
 
+function setSkillProperties(body) {
+    return function(skill) {
+        return new Promise(function(resolve, reject) {
+            skill = utils.extend(getSkillTemplate(), skill);
+            skill = utils.extend(skill, body);
+            return resolve(skill);
+        });
+    };
+}
+
 exports.createNewSkill = function(skillObject) {
     return validateSkill(skillObject)
         .then(skillDao.createNewSkill);
@@ -36,6 +46,14 @@ exports.getSkillById = function(id) {
 
 exports.getSkills = function(query) {
     return skillDao.getSkills(query);
+};
+
+exports.updateSkill = function(id, body) {
+    return exports.getSkillById(id)
+        .then(setSkillProperties(body))
+        .then(validateSkill)
+        .then(utils.setIdOnBody(id))
+        .then(skillDao.updateSkill);
 };
 
 exports.deleteSkillById = function(id) {
