@@ -25,7 +25,8 @@ function getUserToSkillConnectorTemplate() {
         skillId: null,
         level: null,
         years: null,
-        futureLevel: null
+        futureLevel: null,
+        expertise: null
     };
 }
 
