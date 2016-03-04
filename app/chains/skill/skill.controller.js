@@ -21,7 +21,8 @@ function validateSkill(skill) {
 function getSkillTemplate() {
     return {
         name: null,
-        icon: 'fa fa-flask'
+        icon: 'fa fa-flask',
+        skillGroupId: null
     };
 }
 
