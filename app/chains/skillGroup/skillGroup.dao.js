@@ -50,6 +50,19 @@ exports.getSkillGroups = function(query) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
+exports.updateSkillGroup = function(skillGroup) {
+    var options = {
+        resolveWithFullResponse: true,
+        uri: url + '/' + skillGroup._id,
+        method: 'PUT',
+        json: skillGroup
+    };
+
+    return request(options)
+        .then(responseHandler.parsePut)
+        .catch(errorHandler.throwDREAMSHttpError);
+};
+
 exports.deleteSkillGroupById = function(id) {
     var options = {
         resolveWithFullResponse: true,

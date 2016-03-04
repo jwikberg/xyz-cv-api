@@ -30,6 +30,13 @@ module.exports = function(routes) {
             .catch(responseHandler.sendErrorResponse(response));
     });
 
+    // update a skillGroup given an id and an object
+    routes.put('/:id', authentication.isAllowedOrOwnConnector('canEditSkillGroup', skillGroupController.getSkillGroupById), function(request, response) {
+        skillGroupController.updateSkillGroup(request.params.id, request.body, request.headers['x-forwarded-email'])
+            .then(responseHandler.sendSuccessfulPutJsonResponse(response))
+            .catch(responseHandler.sendErrorResponse(response));
+    });
+
     // delete a skillGroup given an id
     routes.delete('/:id', authentication.isAllowed('canEditSkillGroup'), function(request, response) {
         skillGroupController.deleteSkillGroupById(request.params.id)

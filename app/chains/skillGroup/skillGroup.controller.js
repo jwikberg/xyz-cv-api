@@ -24,6 +24,16 @@ function getSkillGroupTemplate() {
     };
 }
 
+function setSkillGroupProperties(body) {
+    return function(skillGroup) {
+        return new Promise(function(resolve, reject) {
+            skillGroup = utils.extend(getSkillGroupTemplate(), skillGroup);
+            skillGroup = utils.extend(skillGroup, body);
+            return resolve(skillGroup);
+        });
+    };
+}
+
 exports.createNewSkillGroup = function(skillGroupObject) {
     return validateSkillGroup(skillGroupObject)
         .then(skillGroupDao.createNewSkillGroup);
@@ -35,6 +45,14 @@ exports.getSkillGroupById = function(id) {
 
 exports.getSkillGroups = function(query) {
     return skillGroupDao.getSkillGroups(query);
+};
+
+exports.updateSkillGroup = function(id, body) {
+    return exports.getSkillGroupById(id)
+        .then(setSkillGroupProperties(body))
+        .then(validateSkillGroup)
+        .then(utils.setIdOnBody(id))
+        .then(skillGroupDao.updateSkillGroup);
 };
 
 exports.deleteSkillGroupById = function(id) {
