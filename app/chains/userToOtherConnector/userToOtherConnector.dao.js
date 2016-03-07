@@ -46,9 +46,6 @@ exports.getUserToOtherConnectors = function(query) {
     };
 
     return request(options)
-        .then(function(value) {
-            return value;
-        })
         .then(responseHandler.parseGetPolyQuery)
         .catch(errorHandler.throwDREAMSHttpError);
 };
