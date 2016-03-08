@@ -4,7 +4,7 @@ var Promise = require('bluebird');
 
 exports.extend = function(destination, source) {
     for (var prop in destination) {
-        if (destination.hasOwnProperty(prop) && source.hasOwnProperty(prop) && source[prop] !== null) {
+        if (destination.hasOwnProperty(prop) && source.hasOwnProperty(prop)) {
             destination[prop] = source[prop];
         }
     }

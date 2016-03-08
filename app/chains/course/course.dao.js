@@ -1,20 +1,20 @@
 'use strict';
 
 var request = require('request-promise');
-var Promise = require('bluebird');
 var config = require('config');
+var Promise = require('bluebird');
 var responseHandler = require('../../utils/response.handler');
 var errorHandler = require('../../utils/error.handler');
 var utils = require('../../utils/utils');
 
-var url = config.API_URL + 'userToSkillConnector';
+var url = config.API_URL + 'course';
 
-exports.createUserToSkillConnector = function(userToSkillConnector) {
+exports.createNewCourse = function(course) {
     var options = {
         resolveWithFullResponse: true,
         uri: url,
         method: 'POST',
-        json: userToSkillConnector,
+        json: course,
         gzip: true
     };
 
@@ -23,13 +23,13 @@ exports.createUserToSkillConnector = function(userToSkillConnector) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.getUserToSkillConnectorById = function(id) {
+exports.getCourseById = function(id) {
     var options = {
         resolveWithFullResponse: true,
         uri: url + '/' + id,
         method: 'GET',
-        gzip: true,
-        json: true
+        json: true,
+        gzip: true
     };
 
     return request(options)
@@ -37,7 +37,7 @@ exports.getUserToSkillConnectorById = function(id) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.getUserToSkillConnectors = function(query) {
+exports.getCourses = function(query) {
     var options = {
         resolveWithFullResponse: true,
         uri: url + utils.getQueryByObject(query),
@@ -50,23 +50,35 @@ exports.getUserToSkillConnectors = function(query) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.updateUserToSkillConnector = function(userToSkillConnector) {
+exports.deleteCourseById = function(id) {
     var options = {
         resolveWithFullResponse: true,
-        uri: url + '/' + userToSkillConnector._id,
-        method: 'PUT',
-        json: userToSkillConnector
+        uri: url + '/' + id,
+        method: 'DELETE'
     };
 
     return request(options)
-        .then(responseHandler.parsePut)
+        .then(responseHandler.parseDelete)
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.deleteUserToSkillConnector = function(userToSkillConnectorId) {
+exports.createIndex = function(fields, query) {
     var options = {
         resolveWithFullResponse: true,
-        uri: url + '/' + userToSkillConnectorId,
+        uri: config.API_URL + '_indices/course' + utils.getQueryByObject(query),
+        method: 'POST',
+        json: fields
+    };
+
+    return request(options)
+        .then(responseHandler.parsePostIndex)
+        .catch(errorHandler.throwDREAMSHttpError);
+};
+
+exports.purgeIndices = function() {
+    var options = {
+        resolveWithFullResponse: true,
+        uri: config.API_URL + '_indices/course',
         method: 'DELETE'
     };
 

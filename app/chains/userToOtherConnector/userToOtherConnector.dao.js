@@ -7,14 +7,14 @@ var responseHandler = require('../../utils/response.handler');
 var errorHandler = require('../../utils/error.handler');
 var utils = require('../../utils/utils');
 
-var url = config.API_URL + 'userToSkillConnector';
+var url = config.API_URL + 'userToOtherConnector';
 
-exports.createUserToSkillConnector = function(userToSkillConnector) {
+exports.createUserToOtherConnector = function(userToOtherConnector) {
     var options = {
         resolveWithFullResponse: true,
         uri: url,
         method: 'POST',
-        json: userToSkillConnector,
+        json: userToOtherConnector,
         gzip: true
     };
 
@@ -23,7 +23,7 @@ exports.createUserToSkillConnector = function(userToSkillConnector) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.getUserToSkillConnectorById = function(id) {
+exports.getUserToOtherConnectorById = function(id) {
     var options = {
         resolveWithFullResponse: true,
         uri: url + '/' + id,
@@ -37,7 +37,7 @@ exports.getUserToSkillConnectorById = function(id) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.getUserToSkillConnectors = function(query) {
+exports.getUserToOtherConnectors = function(query) {
     var options = {
         resolveWithFullResponse: true,
         uri: url + utils.getQueryByObject(query),
@@ -50,12 +50,12 @@ exports.getUserToSkillConnectors = function(query) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.updateUserToSkillConnector = function(userToSkillConnector) {
+exports.updateUserToOtherConnector = function(userToOtherConnector) {
     var options = {
         resolveWithFullResponse: true,
-        uri: url + '/' + userToSkillConnector._id,
+        uri: url + '/' + userToOtherConnector._id,
         method: 'PUT',
-        json: userToSkillConnector
+        json: userToOtherConnector
     };
 
     return request(options)
@@ -63,10 +63,10 @@ exports.updateUserToSkillConnector = function(userToSkillConnector) {
         .catch(errorHandler.throwDREAMSHttpError);
 };
 
-exports.deleteUserToSkillConnector = function(userToSkillConnectorId) {
+exports.deleteUserToOtherConnector = function(userToOtherConnectorId) {
     var options = {
         resolveWithFullResponse: true,
-        uri: url + '/' + userToSkillConnectorId,
+        uri: url + '/' + userToOtherConnectorId,
         method: 'DELETE'
     };
 
