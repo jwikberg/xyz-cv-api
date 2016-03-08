@@ -38,7 +38,8 @@ function getUserToCertificateConnectorTemplate() {
         certificateId: null,
         skills: [],
         dateFrom: null,
-        dateTo: null
+        dateTo: null,
+        description: null
     };
 }
 
