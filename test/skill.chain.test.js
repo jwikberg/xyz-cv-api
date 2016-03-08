@@ -180,8 +180,7 @@ describe('/skill', function() {
             .set('Content-Type', 'application/json')
             .send({
                 name: 'test1',
-                icon: null,
-                id: '1234'
+                inavlid: 'should be removed'
             })
 
             // end handles the response

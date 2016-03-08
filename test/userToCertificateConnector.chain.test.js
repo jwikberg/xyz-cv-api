@@ -50,8 +50,7 @@ describe('/userToCertificateConnector', function() {
                 userId: '456',
                 skills: [],
                 dateFrom: null,
-                dateTo: null,
-                description: null
+                dateTo: null
             })
             .reply(200, resultPost)
 
@@ -216,8 +215,7 @@ describe('/userToCertificateConnector', function() {
                 userId: '456',
                 skills: [],
                 dateFrom: null,
-                dateTo: null,
-                description: null
+                dateTo: null
             })
             .reply(200, resultPost)
 
@@ -232,7 +230,8 @@ describe('/userToCertificateConnector', function() {
             .send({
                 certificateId: '123',
                 userId: '456',
-                id: '789'
+                id: '789',
+                invalid: 'should be removed aswell'
             })
 
             // end handles the response
