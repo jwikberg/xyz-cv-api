@@ -40,8 +40,7 @@ describe('/certificate', function() {
 
         var resultPost = {
             name: 'test2',
-            customer: null,
-            domain: null,
+            description: null,
             createAt: '2015-06-16T07:33:14.385Z',
             updatedAt: '2015-06-16T07:33:14.385Z',
             _id: '557fd13a9a81250f00194d58'
@@ -50,8 +49,7 @@ describe('/certificate', function() {
         nock(mockedUrl)
             .post('/certificate', {
                 name: 'test2',
-                customer: null,
-                domain: null
+                description: null
             })
             .reply(200, resultPost)
 
@@ -169,8 +167,7 @@ describe('/certificate', function() {
         nock(mockedUrl)
             .post('/certificate', {
                 name: 'test1',
-                customer: null,
-                domain: null
+                description: null,
             })
             .reply(200, resultPost)
 
@@ -184,7 +181,8 @@ describe('/certificate', function() {
             .set('Content-Type', 'application/json')
             .send({
                 name: 'test1',
-                id: '1234'
+                id: '1234',
+                invalid: 'shoudl be removed'
             })
 
             // end handles the response
