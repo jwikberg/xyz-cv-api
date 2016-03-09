@@ -42,6 +42,8 @@ describe('/userToSkillConnector', function() {
             level: '3',
             futureLevel: '4',
             years: '5',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-16T10:33:27.803Z',
             updatedAt: '2015-06-16T10:33:27.803Z',
             _id: '557ffb779a81250f00194d60'
@@ -53,7 +55,9 @@ describe('/userToSkillConnector', function() {
                 userId: '456',
                 level: '3',
                 futureLevel: '4',
-                years: '5'
+                years: '5',
+                expertise: 'true',
+                experience: 'true'
             })
             .reply(200, resultPost)
 
@@ -70,7 +74,9 @@ describe('/userToSkillConnector', function() {
                 userId: '456',
                 level: '3',
                 futureLevel: '4',
-                years: '5'
+                years: '5',
+                expertise: 'true',
+                experience: 'true'
             })
 
             // end handles the response
@@ -213,6 +219,8 @@ describe('/userToSkillConnector', function() {
             level: '2',
             futureLevel: '3',
             years: '5',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-16T13:46:07.589Z',
             updatedAt: '2015-06-16T13:46:07.589Z',
             _id: '5580289f9a81250f00194d61'
@@ -224,7 +232,9 @@ describe('/userToSkillConnector', function() {
                 userId: '456',
                 level: '2',
                 futureLevel: '3',
-                years: '5'
+                years: '5',
+                expertise: 'true',
+                experience: 'true',
             })
             .reply(200, resultPost)
 
@@ -242,6 +252,8 @@ describe('/userToSkillConnector', function() {
                 level: '2',
                 futureLevel: '3',
                 years: '5',
+                expertise: 'true',
+                experience: 'true',
                 id: '789'
             })
 
@@ -598,6 +610,8 @@ describe('/userToSkillConnector', function() {
             userId: '789',
             level: '3',
             years: '5',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
@@ -646,6 +660,8 @@ describe('/userToSkillConnector', function() {
             level: '3',
             futureLevel: '4',
             years: '0',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
@@ -693,6 +709,8 @@ describe('/userToSkillConnector', function() {
             userId: '789',
             level: '3',
             futureLevel: '4',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
@@ -742,6 +760,8 @@ describe('/userToSkillConnector', function() {
             userId: '789',
             level: '3',
             futureLevel: '4',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
@@ -789,6 +809,8 @@ describe('/userToSkillConnector', function() {
             userId: '789',
             level: '3',
             futureLevel: '4',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
@@ -832,6 +854,8 @@ describe('/userToSkillConnector', function() {
             userId: '789',
             level: '3',
             futureLevel: '4',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
@@ -877,6 +901,8 @@ describe('/userToSkillConnector', function() {
             userId: '789',
             level: '3',
             futureLevel: '4',
+            expertise: 'true',
+            experience: 'true',
             createdAt: '2015-06-15T11:36:08.114Z',
             updatedAt: '2015-06-15T11:36:08.114Z'
         };
