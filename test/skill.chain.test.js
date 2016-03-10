@@ -41,6 +41,7 @@ describe('/skill', function() {
         var resultPost = {
             name: 'test2',
             icon: 'fa fa-flask',
+            skillGroupId: null,
             createAt: '2015-06-16T07:33:14.385Z',
             updatedAt: '2015-06-16T07:33:14.385Z',
             _id: '557fd13a9a81250f00194d58'
@@ -49,7 +50,8 @@ describe('/skill', function() {
         nock(mockedUrl)
             .post('/skill', {
                 name: 'test2',
-                icon: 'fa fa-flask'
+                icon: 'fa fa-flask',
+                skillGroupId: null
             })
             .reply(200, resultPost)
 
@@ -166,7 +168,8 @@ describe('/skill', function() {
         nock(mockedUrl)
             .post('/skill', {
                 name: 'test1',
-                icon: 'fa fa-flask'
+                icon: 'fa fa-flask',
+                skillGroupId: null
             })
             .reply(200, resultPost)
 
