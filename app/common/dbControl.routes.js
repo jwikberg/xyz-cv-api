@@ -708,13 +708,16 @@ function addRoles() {
 function addSkillGroups() {
     var skillGroups = [
         {
-            name: 'Project methods & standards'
+            name: 'Project methods & standards',
+            order: 1
         },
         {
-            name: 'Roles'
+            name: 'Roles',
+            order: 2
         },
         {
-            name: 'Technologies'
+            name: 'Technologies',
+            order: 3
         }
     ];
 
