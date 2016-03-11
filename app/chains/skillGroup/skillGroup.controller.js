@@ -20,7 +20,8 @@ function validateSkillGroup(skillGroup) {
 
 function getSkillGroupTemplate() {
     return {
-        name: null
+        name: null,
+        order: null
     };
 }
 
