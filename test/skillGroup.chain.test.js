@@ -38,6 +38,7 @@ describe('/skillGroup', function() {
     it('should reply with HTTP status code 200 and a correctly formatted JSON object when creating a new skillGroup', function(done) {
         var resultPost = {
             name: 'test2',
+            order: 1,
             createAt: '2015-06-16T07:33:14.385Z',
             updatedAt: '2015-06-16T07:33:14.385Z',
             _id: '557fd13a9a81250f00194d58'
@@ -45,7 +46,8 @@ describe('/skillGroup', function() {
 
         nock(mockedUrl)
             .post('/skillGroup', {
-                name: 'test2'
+                name: 'test2',
+                order: 1
             })
             .reply(200, resultPost)
 
@@ -58,7 +60,8 @@ describe('/skillGroup', function() {
             .set('x-forwarded-user', 'A')
             .set('Content-Type', 'application/json')
             .send({
-                name: 'test2'
+                name: 'test2',
+                order: 1
             })
 
             // end handles the response
@@ -155,6 +158,7 @@ describe('/skillGroup', function() {
 
         var resultPost = {
             name: 'test1',
+            order: 1,
             createAt: '2015-06-16T07:33:14.385Z',
             updatedAt: '2015-06-16T07:33:14.385Z',
             _id: '1234'
@@ -162,7 +166,8 @@ describe('/skillGroup', function() {
 
         nock(mockedUrl)
             .post('/skillGroup', {
-                name: 'test1'
+                name: 'test1',
+                order: 1
             })
             .reply(200, resultPost)
 
@@ -176,6 +181,7 @@ describe('/skillGroup', function() {
             .set('Content-Type', 'application/json')
             .send({
                 name: 'test1',
+                order: 1,
                 id: '1234'
             })
 
